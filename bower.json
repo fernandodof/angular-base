@@ -1,15 +1,10 @@
 {
   "name": "rdash-angular",
   "version": "0.0.1",
-  "description": "An AngularJS implementation of the responsive dashboard",
-  "homepage": "https://github.com/Ehesp/Responsive-Dashboard",
-  "authors": [
-    "Elliot Hesp <elliot.hesp@gmail.com>"
-  ],
-  "contributors": [
-    "Ricardo Pascua Jr <rdpascua@outlook.com>",
-    "Leonel Samayoa <leonel.e.samayoa@gmail.com>"
-  ],
+  "description": "",
+  "homepage": "",
+  "authors": [],
+  "contributors": [],
   "main": "index.html",
   "license": "MIT",
   "ignore": [
@@ -28,10 +23,14 @@
     "bootstrap": "~3.3.6",
     "font-awesome": "~4.5.0",
     "angular-bootstrap-toggle-switch": "^0.5.6",
-    "angular-smart-table": "^2.1.8"
+    "angular-smart-table": "^2.1.8",
+    "angular-translate-storage-local": "^2.12.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rdash/rdash-angular"
+    "url": ""
+  },
+  "devDependencies": {
+    "angular-translate": "^2.12.1"
   }
 }

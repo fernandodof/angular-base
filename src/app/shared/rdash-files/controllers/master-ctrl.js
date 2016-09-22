@@ -3,7 +3,7 @@
      * Master Controller
      */
 
-    angular.module('novusBet')
+    angular.module('upFrota')
         .controller('MasterCtrl', ['$scope', '$cookieStore', MasterCtrl]);
 
     function MasterCtrl($scope, $cookieStore) {

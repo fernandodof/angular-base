@@ -5,7 +5,7 @@
      */
 
     angular
-        .module('novusBet')
+        .module('upFrota')
         .directive('rdLoading', rdLoading);
 
     function rdLoading() {

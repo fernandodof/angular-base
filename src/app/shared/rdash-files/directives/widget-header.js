@@ -4,7 +4,7 @@
      */
 
     angular
-        .module('novusBet')
+        .module('upFrota')
         .directive('rdWidgetHeader', rdWidgetTitle);
 
     function rdWidgetTitle() {

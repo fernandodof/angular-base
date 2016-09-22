@@ -1,12 +1,12 @@
-(function() {
+(function () {
     'use strict';
 
     /**
      * Route configuration for the RDash module.
      */
-    angular.module('novusBet')
+    angular.module('upFrota')
         .config(['$stateProvider', '$urlRouterProvider',
-            function($stateProvider, $urlRouterProvider) {
+            function ($stateProvider, $urlRouterProvider) {
 
                 // For unmatched routes
                 $urlRouterProvider.otherwise('/');

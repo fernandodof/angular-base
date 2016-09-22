@@ -1,4 +1,4 @@
-angular.module('novusBet').controller('TableController', TableController);
+angular.module('upFrota').controller('TableController', TableController);
 
 function TableController() {
 

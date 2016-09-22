@@ -4,7 +4,7 @@
      */
 
     angular
-        .module('novusBet')
+        .module('upFrota')
         .controller('AlertsCtrl', ['$scope', AlertsCtrl]);
 
     function AlertsCtrl($scope) {

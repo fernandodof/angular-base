@@ -1,6 +1,6 @@
 (function() {
 
-    angular.module('novusBet').service('ModalAlertService', ModalAlertService);
+    angular.module('upFrota').service('ModalAlertService', ModalAlertService);
 
     ModalAlertService.$inject = ['$uibModal']
 
@@ -90,7 +90,7 @@
         };
     }
 
-    angular.module('novusBet').controller('ModalInstanceCtrl', function($uibModalInstance, modalOptions) {
+    angular.module('upFrota').controller('ModalInstanceCtrl', function($uibModalInstance, modalOptions) {
         var $ctrl = this;
 
         $ctrl.modalOptions = modalOptions;

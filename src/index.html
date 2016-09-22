@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="novusBet">
+<html lang="en" ng-app="upFrota">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
   <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
 
     <ui-view name="sidebar"></ui-view>
-    
+
     <div id="content-wrapper">
       <div class="page-content">
 
@@ -36,11 +36,21 @@
 <!-- SCRIPTS -->
 <!-- build:js lib/js/vendor.min.js -->
 <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+<!-- js for angular bootstrap -->
 <script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
 <script type="text/javascript" src="../bower_components/angular-cookies/angular-cookies.min.js"></script>
+
 <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<!-- smart-table dependencies -->
 <script type="text/javascript" src="../bower_components/angular-smart-table/dist/smart-table.min.js"></script>
+<!-- tooble-swicth dependencies -->
 <script type="text/javascript" src="../bower_components/angular-bootstrap-toggle-switch/angular-toggle-switch.min.js"></script>
+<!-- Angular translate dependencies -->
+<script type="text/javascript" src="../bower_components/angular-translate/angular-translate.min.js "></script>
+<script type="text/javascript" src="../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script>
 <!-- endbuild -->
 <!-- Custom Scripts -->
 <!-- build:js js/custom.js-->
@@ -58,7 +68,8 @@
 <script type="text/javascript" src="app/components/modals-test/modal-test.js"></script>
 <!-- Tables -->
 <script type="text/javascript" src="app/shared/tables/TableController.js"></script>
-<!-- Toggle Switch -->
+<!-- translate config -->
+<script type="text/javascript" src="app/shared/config/translate.js"></script>
 <!-- endbuild -->
 </body>
 </html>

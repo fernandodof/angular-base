@@ -1,11 +1,11 @@
 (function () {
     angular.module('upFrota')
-        .controller('ModalTest', modalTestCtrl)
+        .controller('ModalTest', ModalTestCtrl);
 
-    modalTestCtrl.$inject = ['ModalAlertService']
+    ModalTestCtrl.$inject = ['ModalAlertService', '$log'];
 
-    function modalTestCtrl(ModalAlertService) {
-        var self = this
+    function ModalTestCtrl(ModalAlertService, $log) {
+        var self = this;
 
         self.showConfirmModal = function (type) {
             var modalOptions = {
@@ -14,21 +14,21 @@
                 headerText: 'Confirm',
                 bodyText: 'Are you sure of it ?',
                 type: type
-            }
+            };
 
             ModalAlertService.confirm(modalOptions)
                 .then(function (result) {
-                    console.log(result)
-                })
-        }
+                    $log.debug(result);
+                });
+        };
 
         self.showAlertModal = function (type) {
             ModalAlertService.alert({
                     type: type
                 })
                 .then(function (result) {
-                    console.log(result)
-                })
+                    $log.debug(result);
+                });
         }
     }
 })();

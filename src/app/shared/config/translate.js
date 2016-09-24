@@ -1,10 +1,10 @@
 (function () {
 	angular.module('upFrota')
-		.config(translateConfig);
+		.config(TranslateConfig);
 
-	translateConfig.$inject = ['$translateProvider'];
+	TranslateConfig.$inject = ['$translateProvider'];
 
-	function translateConfig($translateProvider) {
+	function TranslateConfig($translateProvider) {
 
 		$translateProvider.useStaticFilesLoader({
 			prefix: 'i18n/',

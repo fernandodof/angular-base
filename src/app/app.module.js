@@ -5,6 +5,7 @@
         'pascalprecht.translate',
         'ngCookies',
         'smart-table',
-        'toggle-switch'
+        'toggle-switch',
+        'ngResource'
     ]);
 })();

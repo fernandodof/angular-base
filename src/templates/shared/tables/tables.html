@@ -1,26 +1,59 @@
-<div class="row">
-  <div class="col-lg-6">
-	  <table st-table="ctrl.rowCollection" class="table table-striped">
-			<thead>
-				<tr>
-					<th st-sort="firstName">first name</th>
-					<th st-sort="lastName">last name</th>
-					<th st-sort="birthDate">birth date</th>
-					<th st-sort="balance" st-skip-natural="true">balance</th>
-					<th>email</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="row in ctrl.rowCollection">
-					<td ng-bind="row.firstName"></td>
-					<td ng-bind="row.lastName"></td>
-					<td ng-bind="row.birthDate | date"></td>
-					<td ng-bind="row.balance | currency"></td>
-					<td>email</a></td>
-				</tr>
-			</tbody>
-		</table>
-  </div>
-  <div class="col-lg-6">
-  </div>
+<div class="" st-pipe="ctrl.loadData" st-table="ctrl.rows">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr class="em-table">
+                        <th st-sort="" ng-bind="'Id'"></th>
+                        <th st-sort="" ng-bind="'First Name'"></th>
+                        <th st-sort="" ng-bind="'Last Name'"></th>
+                        <th st-sort="" ng-bind="'Email'"></th>
+                        <th st-sort="" ng-bind="'Gender'"></th>
+                        <th st-sort="" ng-bind="'City'"></th>
+                        <th st-sort="" ng-bind="'Country'"></th>
+                    </tr>
+                </thead>
+
+                <tbody class="loader" ng-show="ctrl.isLoading">
+                    <tr>
+                        <td colspan="7" class="text-center">Loading....</td>
+                    </tr>
+                </tbody>
+
+                <tbody ng-show="!ctrl.isLoading && ctrl.rows.length == 0">
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            <p class="text-warning" ng-bind="'COMMON_NO_REGISTERS_FOUND' | translate"></p>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tbody ng-show="ctrl.connectionError">
+                    <tr>
+                        <td colspan="7" class="text-center">
+                            <p class="text-warning" ng-bind="'COMMON_CONNECTION_ERROR' | translate"></p>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tbody class="content" ng-show="!ctrl.isLoading && !ctrl.connectionError">
+                    <tr ng-repeat="row in ctrl.rows">
+                        <td ng-bind="row.id"></td>
+                        <td ng-bind="row.firstName"></td>
+                        <td ng-bind="row.lastName"></td>
+                        <td ng-bind="row.email"></td>
+                        <td ng-bind="row.gender"></td>
+                        <td ng-bind="row.city"></td>
+                        <td ng-bind="row.country"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="em-pagination">
+                        <td class="text-center" st-pagination="" st-items-by-page="5" st-displayed-pages="10" colspan="7">
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
 </div>

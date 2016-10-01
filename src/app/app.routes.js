@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     /**
@@ -6,7 +6,7 @@
      */
     angular.module('upFrota')
         .config(['$stateProvider', '$urlRouterProvider',
-            function ($stateProvider, $urlRouterProvider) {
+            function($stateProvider, $urlRouterProvider) {
 
                 // For unmatched routes
                 $urlRouterProvider.otherwise('/');
@@ -43,7 +43,7 @@
                         views: {
                             main: {
                                 templateUrl: 'templates/shared/tables/tables.html',
-                                controller: 'TableController',
+                                controller: 'TableTestController',
                                 controllerAs: 'ctrl'
                             }
                         }

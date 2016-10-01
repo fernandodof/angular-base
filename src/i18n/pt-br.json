@@ -1,3 +1,5 @@
 {
-    "COMMOM_LOGIN": "Entrar"
+    "COMMOM_LOGIN": "Entrar",
+    "COMMON_NO_REGISTERS_FOUND": "Registros não encontrados",
+    "COMMON_CONNECTION_ERROR": "Error de conecxão"
 }

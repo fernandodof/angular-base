@@ -1,3 +1,5 @@
 {
-    "COMMOM_LOGIN": "Login"
+    "COMMOM_LOGIN": "Login",
+    "COMMON_NO_REGISTERS_FOUND": "Regiters not found",
+    "COMMON_CONNECTION_ERROR": "Connection Error"
 }

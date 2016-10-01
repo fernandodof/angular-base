@@ -1,11 +1,11 @@
-(function () {
-    angular.module('upForta')
+(function() {
+    angular.module('upFrota')
         .config(LogProviderConfig);
 
     LogProviderConfig.$inject = ['$logProvider', 'appConfig'];
 
     function LogProviderConfig($logProvider, appConfig) {
-        $logProvider.debugEnabled(appconfig.debug);
+        $logProvider.debugEnabled(appConfig.debug);
     }
 
 })();

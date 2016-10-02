@@ -1,13 +1,13 @@
-<div class="modal-header no-padding-top-bottom custom-modal bg-{{$ctrl.modalOptions.type}}">
+<div class="modal-header no-padding-top-bottom custom-modal bg-{{ctrl.modalOptions.type}}">
 {{ctrl.modalOptions}}
-	<span ng-class="$ctrl.modalOptions.icon" class="pull-left margin-top-10 padding-right-10"></span>
-	<h4 class="pull-left" ng-bind="$ctrl.modalOptions.headerText"></h4>
-	<button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close" ng-click="$ctrl.dismiss()"><span aria-hidden="true">&times;</span></button>
+	<span ng-class="ctrl.modalOptions.icon" class="pull-left margin-top-10 padding-right-10"></span>
+	<h4 class="pull-left" ng-bind="ctrl.modalOptions.headerText"></h4>
+	<button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close" ng-click="ctrl.dismiss()"><span aria-hidden="true">&times;</span></button>
 </div>
 <div class="modal-body">
-	<p ng-bind="$ctrl.modalOptions.bodyText"></p>
+	<p ng-bind="ctrl.modalOptions.bodyText"></p>
 </div>
 <div class="modal-footer padding-top-10 padding-bottom-10">
-	<button type="button" class="btn" ng-click="$ctrl.close()" ng-if="$ctrl.modalOptions.showCancel" ng-bind="$ctrl.modalOptions.closeButtonText"></button>
-	<button class="btn" ng-class="$ctrl.modalOptions.type ? ('btn-'+$ctrl.modalOptions.type) : 'btn-default' " ng-click="$ctrl.ok()" ng-bind="$ctrl.modalOptions.actionButtonText"></button>
+	<button type="button" class="btn" ng-click="ctrl.close()" ng-if="ctrl.modalOptions.showCancel" ng-bind="ctrl.modalOptions.closeButtonText"></button>
+	<button class="btn" ng-class="ctrl.modalOptions.type ? ('btn-'+ctrl.modalOptions.type) : 'btn-default' " ng-click="ctrl.ok()" ng-bind="ctrl.modalOptions.actionButtonText"></button>
 </div>

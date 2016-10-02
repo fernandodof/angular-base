@@ -5,13 +5,57 @@
 
     function TableTestController(TableFactory, CrudFactory, TableTestService) {
 
-        var self = this;
+        var ctrl = this;
 
         var _options = {
-            scope: self,
+            scope: ctrl,
             service: TableTestService,
         };
         CrudFactory.prepare(_options);
+
+        ctrl.tableHeaders = [{
+            sortAt: 'id',
+            label: 'Id'
+        }, {
+            sortAt: 'firstName',
+            label: 'First Name'
+        }, {
+            sortAt: 'lastName',
+            label: 'Last Name'
+        }, {
+            sortAt: 'email',
+            label: 'Email'
+        }, {
+            sortAt: 'gender',
+            label: 'Gender'
+        }, {
+            sortAt: 'city',
+            label: 'city'
+        }, {
+            sortAt: 'country',
+            label: 'Country'
+        }];
+
+        ctrl.filterFirstName = {
+            name: 'firstName',
+            isEqualsSearch: false
+        }
+
+        ctrl.filterCountry = {
+            name: 'firstName',
+            isEqualsSearch: false
+        }
+
+        ctrl.countries = [{
+            key: '*',
+            value: 'All'
+        }, {
+            key: 'brazil',
+            value: 'Brazil'
+        }, {
+            key: 'usa',
+            value: 'USA'
+        }, ];
 
     }
 })();

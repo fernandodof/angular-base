@@ -7,9 +7,9 @@
 
     function ModalAlertService($uibModal) {
 
-        var $ctrl = this;
+        var ctrl = this;
 
-        $ctrl.modalOptions = {
+        ctrl.modalOptions = {
             closeButtonText: 'Close',
             actionButtonText: 'OK',
             headerText: 'Confirm',
@@ -19,17 +19,17 @@
             icon: 'fa fa-info'
         };
 
-        $ctrl.modalDefaults = {
+        ctrl.modalDefaults = {
             backdrop: true,
             keyboard: true,
             modalFade: true,
             templateUrl: 'templates/shared/modal-alert/modal-alert-template.html',
             controller: 'ModalInstanceController',
-            controllerAs: '$ctrl',
+            controllerAs: 'ctrl',
             size: 'md'
         };
 
-        $ctrl.getIcon = function (type) {
+        ctrl.getIcon = function (type) {
 
             var icon = 'fa fa-info';
 
@@ -48,38 +48,38 @@
 
         };
 
-        $ctrl.confirm = function (customModalOptions, customModalDefaults) {
-            $ctrl.modalOptions.showCancel = true;
+        ctrl.confirm = function (customModalOptions, customModalDefaults) {
+            ctrl.modalOptions.showCancel = true;
 
             if (!customModalDefaults) {
                 customModalDefaults = {};
             }
 
-            return $ctrl.show(customModalDefaults, customModalOptions);
+            return ctrl.show(customModalDefaults, customModalOptions);
         };
 
-        $ctrl.alert = function (customModalOptions, customModalDefaults) {
-            $ctrl.modalOptions.showCancel = false;
-            $ctrl.modalOptions.headerText = 'Alert';
-            $ctrl.modalOptions.bodyText = 'This happened';
+        ctrl.alert = function (customModalOptions, customModalDefaults) {
+            ctrl.modalOptions.showCancel = false;
+            ctrl.modalOptions.headerText = 'Alert';
+            ctrl.modalOptions.bodyText = 'This happened';
 
             if (!customModalDefaults) {
                 customModalDefaults = {};
             }
 
-            return $ctrl.show(customModalDefaults, customModalOptions);
+            return ctrl.show(customModalDefaults, customModalOptions);
         };
 
-        $ctrl.show = function (customModalDefaults, customModalOptions) {
+        ctrl.show = function (customModalDefaults, customModalOptions) {
 
             var tempModalDefaults = {};
             var tempModalOptions = {};
 
-            $ctrl.modalOptions.icon = $ctrl.getIcon(customModalOptions.type);
+            ctrl.modalOptions.icon = ctrl.getIcon(customModalOptions.type);
 
-            angular.extend(tempModalDefaults, $ctrl.modalDefaults,
+            angular.extend(tempModalDefaults, ctrl.modalDefaults,
                 customModalDefaults);
-            angular.extend(tempModalOptions, $ctrl.modalOptions,
+            angular.extend(tempModalOptions, ctrl.modalOptions,
                 customModalOptions);
 
             tempModalDefaults.resolve = {
@@ -97,21 +97,21 @@
     angular.module('upFrota')
         .controller('ModalInstanceController', function ($uibModalInstance,
             modalOptions) {
-            var $ctrl = this;
+            var ctrl = this;
 
-            $ctrl.modalOptions = modalOptions;
+            ctrl.modalOptions = modalOptions;
 
-            $ctrl.ok = function () {
-                $uibModalInstance.close($ctrl.modalOptions.actionButtonText
+            ctrl.ok = function () {
+                $uibModalInstance.close(ctrl.modalOptions.actionButtonText
                     .toLowerCase());
             };
 
-            $ctrl.close = function () {
-                $uibModalInstance.close($ctrl.modalOptions.closeButtonText
+            ctrl.close = function () {
+                $uibModalInstance.close(ctrl.modalOptions.closeButtonText
                     .toLowerCase());
             };
 
-            $ctrl.dismiss = function (result) {
+            ctrl.dismiss = function (result) {
                 $uibModalInstance.close('dismiss');
             };
         });

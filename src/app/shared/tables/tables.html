@@ -1,59 +1,10 @@
 <div class="" st-pipe="ctrl.loadData" st-table="ctrl.rows">
     <div class="row">
         <div class="col-md-12">
-            <table class="table">
-                <thead>
-                    <tr class="em-table">
-                        <th st-sort="" ng-bind="'Id'"></th>
-                        <th st-sort="" ng-bind="'First Name'"></th>
-                        <th st-sort="" ng-bind="'Last Name'"></th>
-                        <th st-sort="" ng-bind="'Email'"></th>
-                        <th st-sort="" ng-bind="'Gender'"></th>
-                        <th st-sort="" ng-bind="'City'"></th>
-                        <th st-sort="" ng-bind="'Country'"></th>
-                    </tr>
-                </thead>
-
-                <tbody class="loader" ng-show="ctrl.isLoading">
-                    <tr>
-                        <td colspan="7" class="text-center">Loading....</td>
-                    </tr>
-                </tbody>
-
-                <tbody ng-show="!ctrl.isLoading && ctrl.rows.length == 0">
-                    <tr>
-                        <td colspan="5" class="text-center">
-                            <p class="text-warning" ng-bind="'COMMON_NO_REGISTERS_FOUND' | translate"></p>
-                        </td>
-                    </tr>
-                </tbody>
-
-                <tbody ng-show="ctrl.connectionError">
-                    <tr>
-                        <td colspan="7" class="text-center">
-                            <p class="text-warning" ng-bind="'COMMON_CONNECTION_ERROR' | translate"></p>
-                        </td>
-                    </tr>
-                </tbody>
-
-                <tbody class="content" ng-show="!ctrl.isLoading && !ctrl.connectionError">
-                    <tr ng-repeat="row in ctrl.rows">
-                        <td ng-bind="row.id"></td>
-                        <td ng-bind="row.firstName"></td>
-                        <td ng-bind="row.lastName"></td>
-                        <td ng-bind="row.email"></td>
-                        <td ng-bind="row.gender"></td>
-                        <td ng-bind="row.city"></td>
-                        <td ng-bind="row.country"></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr class="em-pagination">
-                        <td class="text-center" st-pagination="" st-items-by-page="5" st-displayed-pages="10" colspan="7">
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
+            <table-filter-input class="pull-left margin-right-10" input-config="ctrl.filterFirstName"></table-filter-input>
+            <table-filter-select class="pull-left" select-label="'County'" select-config="ctrl.filterCountry" select-values="ctrl.countries"></table-filter-select>
+            <table-display table-headers="ctrl.tableHeaders" table-rows="ctrl.rows" is-loading="ctrl.isLoading"
+                           connection-error="ctrl.connectionError" items-by-page="5" displayed-pages="10"></table-display>
         </div>
     </div>
 </div>

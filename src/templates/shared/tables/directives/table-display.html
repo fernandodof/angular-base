@@ -1,0 +1,45 @@
+<table class="table">
+    <!-- Table headers -->
+    <thead>
+        <tr class="">
+            <th ng-repeat="header in ctrl.tableHeaders" st-sort="{{header.sortAt}}" ng-bind="header.label | translate"></th>
+        </tr>
+    </thead>
+    <!-- Alternative bodies is of some error -->
+    <tbody class="ctrl.loader" ng-show="ctrl.isLoading">
+        <tr>
+            <td colspan="ctrl.tableHeaders.length" class="text-center" ng-binf="'COMMON_LOADING' | translate"></td>
+        </tr>
+    </tbody>
+
+    <tbody ng-show="!ctrl.isLoading && ctrl.tableRows.length === 0">
+        <tr>
+            <td colspan="ctrl.tableHeaders.length" class="text-center">
+                <p class="text-warning" ng-bind="'COMMON_NO_REGISTERS_FOUND' | translate"></p>
+            </td>
+        </tr>
+    </tbody>
+
+    <tbody ng-show="ctrl.connectionError">
+        <tr>
+            <td colspan="ctrl.tableHeaders.length" class="text-center">
+                <p class="text-warning" ng-bind="'COMMON_CONNECTION_ERROR' | translate"></p>
+            </td>
+        </tr>
+    </tbody>
+    <!-- Actual table content -->
+    <tbody class="content" ng-show="!ctrl.isLoading && !ctrl.connectionError">
+        <tr ng-repeat="row in ctrl.tableRows">
+            <td ng-repeat="data in row" ng-bind="data"></td>
+        </tr>
+    </tbody>
+
+    <!-- table footer pagination -->
+    <tfoot>
+        <tr class="pagination">
+            <td class="text-center" st-pagination="" st-items-by-page="ctrl.itemsByPage ? ctrl.itemsByPage : 10"
+                st-displayed-pages="ctrl.displayedPages ? ctrl.displayedPages : 10" colspan="ctrl.tableHeaders.length">
+            </td>
+        </tr>
+    </tfoot>
+</table>

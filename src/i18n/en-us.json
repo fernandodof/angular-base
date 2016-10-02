@@ -1,5 +1,7 @@
 {
     "COMMOM_LOGIN": "Login",
     "COMMON_NO_REGISTERS_FOUND": "Regiters not found",
-    "COMMON_CONNECTION_ERROR": "Connection Error"
+    "COMMON_CONNECTION_ERROR": "Connection Error",
+    "COMMON_LOADING": "Loading.....",
+    "COMMON_SEARCH": "Search"
 }

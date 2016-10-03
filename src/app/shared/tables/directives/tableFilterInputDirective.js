@@ -26,11 +26,13 @@ function tableFilterInput($timeout, $log, appConfig) {
             }
 
             _filterTimeout = $timeout(function() {
+                console.log('___');
                 if (tableState.pagination && tableState.pagination.start) { // Reset pagination to avoid conflicts navigation in the smart table directive
                     tableState.pagination.start = 0;
                 }
 
                 var value = scope.value;
+
                 if (!scope.inputConfig.isEqualsSearch) {
                     value = '%' + value + '%';
                 }
@@ -46,7 +48,7 @@ function tableFilterInput($timeout, $log, appConfig) {
                             if (scope.value) {
                                 tableState.additionalSearch[i][scope.inputConfig.name] = value;
                             } else {
-                                delete tableState.additionalSearch[i][scope.inputConfig.name]
+                                delete tableState.additionalSearch[i][scope.inputConfig.name];
                             }
                         } else if (scope.value) {
                             var params = {};
@@ -56,7 +58,6 @@ function tableFilterInput($timeout, $log, appConfig) {
                     }
                 }
                 // Call the "options.scope.loadData" in the TableService.js
-                console.log(tableState);
                 ctrl.pipe(tableState);
             }, appConfig.filterDefaultTimeout);
 
@@ -69,11 +70,11 @@ function tableFilterInput($timeout, $log, appConfig) {
         }, function(newValue, oldValue) {
             if (valueWatchCalled === 0) { // Verify if is the first time to this watch, to avoid the table load twice.
                 valueWatchCalled = 1;
-            } else {
+            } else if (newValue !== oldValue) {
                 _search();
                 $log.debug('By value');
             }
-        }, true);
+        });
     };
     return {
         restrict: 'E',

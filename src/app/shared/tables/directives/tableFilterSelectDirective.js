@@ -39,11 +39,14 @@ function tableFilterSelect($timeout, $log, appConfig) {
                     key = '%' + key + '%';
                 }
 
+                var hasProperty = false;
                 if (tableState.additionalSearch === undefined) {
                     tableState.additionalSearch = [];
                 } else {
                     for (var i = 0; i < tableState.additionalSearch.length; i++) {
                         if (tableState.additionalSearch[i].hasOwnProperty(scope.selectConfig.name)) {
+                            console.log('hasOwnProperty');
+                            var hasProperty = true;
                             if (scope.selectedValue.key !== '*') {
                                 tableState.additionalSearch[i][scope.selectConfig.name] = key;
                             } else {
@@ -54,12 +57,13 @@ function tableFilterSelect($timeout, $log, appConfig) {
 
                 }
 
-                if (scope.selectedValue.key !== '*') {
+                if (scope.selectedValue.key !== '*' && !hasProperty) {
                     var params = {};
                     params[scope.selectConfig.name] = key;
                     tableState.additionalSearch.push(params);
                 }
                 // Call the "options.scope.loadData" in the TableService.js
+                console.log(tableState);
                 ctrl.pipe(tableState);
             }, appConfig.filterDefaultTimeout);
 

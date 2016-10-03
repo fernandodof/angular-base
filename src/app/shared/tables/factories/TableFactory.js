@@ -40,10 +40,13 @@
                 params.page = start === 0 ? 0 : Math.ceil(start / number);
             }
 
+            // send search options options to server.
             if (tableState.additionalSearch) {
-                for (var key in tableState.additionalSearch[i]) {
-                    if (tableState.additionalSearch[i][key]) {
-                        params[key] = tableState.additionalSearch[i][key].replace(/\@/g, '\\$&');
+                for (var i = 0; i < tableState.additionalSearch.length; i++) {
+                    for (var key in tableState.additionalSearch[i]) {
+                        if (tableState.additionalSearch[i][key]) {
+                            params[key] = tableState.additionalSearch[i][key].replace(/\@/g, '\\$&');
+                        }
                     }
                 }
             }
@@ -89,9 +92,8 @@
                 } else {
                     _params = undefined;
                 }
-
                 var params = _factoryParams(tableState, _params);
-
+                console.log(params);
                 var Resource = $resource(_service.url, params);
                 var pageable = Resource.get(function() {
                     $log.debug('Initializing pagination.');
@@ -104,7 +106,6 @@
                     tableState.pagination.numberOfPages = pageable.totalPages;
                     tableState.pagination.numberOfElements = pageable.totalElements; // This value could be used in the future
                     options.scope.isLoading = false;
-
                 }, function(error) {
                     $log.debug('An error ocurred while loading the pagination.');
                     options.scope.isLoading = false;

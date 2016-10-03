@@ -42,8 +42,8 @@
         }
 
         ctrl.filterCountry = {
-            name: 'firstName',
-            isEqualsSearch: false
+            name: 'country',
+            isEqualsSearch: true
         }
 
         ctrl.countries = [{

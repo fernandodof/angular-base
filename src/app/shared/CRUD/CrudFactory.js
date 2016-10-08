@@ -337,7 +337,7 @@
                                         });
                                     });
 
-                                TableFactory.reload();
+                                TableService.reload('afterRemove');
 
                                 if (angular.isFunction(options.remove.onSuccess)) {
                                     options.remove.onSuccess();

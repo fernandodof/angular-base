@@ -20,6 +20,7 @@
         var _service;
         var _currentStateName;
         var _params;
+        var _fromAction;
 
         function _factoryParams(tableState, pParams) {
             $log.debug('Initializing the table\'s filters, sorting and pagination.');
@@ -36,8 +37,16 @@
                 // Number of entries showed per page.
                 var number = tableState.pagination.number || 15;
 
-                params.size = number;
-                params.page = start === 0 ? 0 : Math.ceil(start / number);
+                params.size = number; +
+                if (start >= tableState.pagination.numberOfElements - 1 && _fromAction === 'afterRemove') {
+                    start = tableState.pagination.numberOfElements - number - 1;
+                }
+
+                _fromAction = undefined;
+
+                _tableState.pagination.start = start;
+
+                params.page = start <= 0 ? 0 : Math.ceil(start / number);
             }
 
             // send search options options to server.
@@ -60,7 +69,8 @@
             return params;
         }
 
-        var reload = function() {
+        var reload = function(fromAction) {
+            _fromAction = fromAction;
             _controllerScope.loadData(_tableState);
         };
 

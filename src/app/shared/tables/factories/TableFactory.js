@@ -37,7 +37,8 @@
                 // Number of entries showed per page.
                 var number = tableState.pagination.number || 15;
 
-                params.size = number; +
+                params.size = number;
+
                 if (start >= tableState.pagination.numberOfElements - 1 && _fromAction === 'afterRemove') {
                     start = tableState.pagination.numberOfElements - number - 1;
                 }
@@ -103,7 +104,6 @@
                     _params = undefined;
                 }
                 var params = _factoryParams(tableState, _params);
-                console.log(params);
                 var Resource = $resource(_service.url, params);
                 var pageable = Resource.get(function() {
                     $log.debug('Initializing pagination.');

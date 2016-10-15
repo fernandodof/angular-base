@@ -85,7 +85,7 @@ function tableFilterSelect($timeout, $log, appConfig) {
     return {
         restrict: 'EA',
         require: '^stTable',
-        templateUrl: 'app/shared/tables/directives/table-filter-select.html',
+        templateUrl: 'templates/shared/tables/directives/table-filter-select.html',
         scope: {
             selectLabel: '=',
             selectConfig: '=',

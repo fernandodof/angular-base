@@ -10,7 +10,7 @@
 
     angular.module('upFrota').factory('CrudFactory', CrudFactory);
 
-    CrudFactory.inject = ['$resource', '$translate', '$q', '$log', 'toaster', 'TableFactory', 'CreateFactory', 'EditFactory', 'RemoveFactory', 'AuthService', 'MessageService'];
+    CrudFactory.$inject = ['$resource', '$translate', '$q', '$log', 'toaster', 'TableFactory', 'CreateFactory', 'EditFactory', 'RemoveFactory', 'AuthService', 'MessageService'];
 
     function CrudFactory($resource, $translate, $q, $log, toaster, TableFactory, CreateFactory, EditFactory, RemoveFactory, AuthService, MessageService) {
 

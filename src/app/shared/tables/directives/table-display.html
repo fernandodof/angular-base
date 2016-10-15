@@ -14,7 +14,7 @@
 
     <tbody ng-show="!ctrl.isLoading && ctrl.tableRows.length === 0">
         <tr>
-            <td colspan="ctrl.tableHeaders.length" class="text-center">
+            <td colspan="{{ctrl.tableHeaders.length}}" class="text-center">
                 <p class="text-warning" ng-bind="'COMMON_NO_REGISTERS_FOUND' | translate"></p>
             </td>
         </tr>
@@ -22,7 +22,7 @@
 
     <tbody ng-show="ctrl.connectionError">
         <tr>
-            <td colspan="ctrl.tableHeaders.length" class="text-center">
+            <td colspan="{{ctrl.tableHeaders.length}}" class="text-center">
                 <p class="text-warning" ng-bind="'COMMON_CONNECTION_ERROR' | translate"></p>
             </td>
         </tr>
@@ -38,7 +38,7 @@
     <tfoot>
         <tr class="pagination">
             <td class="text-center" st-pagination="" st-items-by-page="ctrl.itemsByPage ? ctrl.itemsByPage : 10"
-                st-displayed-pages="ctrl.displayedPages ? ctrl.displayedPages : 10" colspan="ctrl.tableHeaders.length">
+                st-displayed-pages="ctrl.displayedPages ? ctrl.displayedPages : 10" colspan="{{ctrl.tableHeaders.length}}">
             </td>
         </tr>
     </tfoot>

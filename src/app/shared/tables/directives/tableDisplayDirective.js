@@ -9,7 +9,7 @@
         return {
             restrict: 'E',
             require: '^stTable',
-            templateUrl: 'app/shared/tables/directives/table-display.html',
+            templateUrl: 'templates/shared/tables/directives/table-display.html',
             scope: {},
             bindToController: {
                 tableHeaders: '=',

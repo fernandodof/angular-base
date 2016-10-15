@@ -79,7 +79,7 @@ function tableFilterInput($timeout, $log, appConfig) {
     return {
         restrict: 'E',
         require: '^stTable',
-        templateUrl: 'app/shared/tables/directives/table-filter-input.html',
+        templateUrl: 'templates/shared/tables/directives/table-filter-input.html',
         scope: {
             inputLabel: '=',
             inputConfig: '='

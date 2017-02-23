@@ -27,7 +27,9 @@
     "angular-translate-storage-local": "^2.12.1",
     "AngularJS-Toaster": "angularjs-toaster#^2.0.0",
     "angular-animate": "^1.5.8",
-    "ngstorage": "^0.3.11"
+    "ngstorage": "^0.3.11",
+    "angular-translate-loader-static-files": "^2.14.0",
+    "angular-resource": "^1.6.2"
   },
   "repository": {
     "type": "git",
